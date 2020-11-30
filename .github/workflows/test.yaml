@@ -1,0 +1,13 @@
+name: Symfony UX
+
+on: push
+
+jobs:
+    coding-style:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@master
+            - name: Prettier
+              run: |
+                  yarn global add prettier@^2.2.0
+                  ~/.yarn/bin/prettier --check src/**/*.js --config .prettierrc.json
