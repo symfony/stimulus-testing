@@ -1,6 +1,6 @@
 # Symfony UX Stimulus testing
 
-Symfony UX Stimulus testing is an low-level package to help write tests for Stimulus controllers
+Symfony UX Stimulus testing is a low-level package to help write tests for Stimulus controllers
 in applications and reusable packages.
 
 **If you are developing a project with Symfony Flex, you should probably use the ux-test-pack
