@@ -3,9 +3,6 @@
 Symfony UX Stimulus testing is a low-level package to help write tests for Stimulus controllers
 in applications and reusable packages.
 
-**If you are developing a project with Symfony Flex, you should probably use the ux-test-pack
-instead**. The pack includes this package and configures it automatically in your application.
-
 Symfony UX Stimulus testing is currently considered **experimental**.
 
 ## Installation
@@ -50,12 +47,13 @@ module.exports = {
 {
     "presets": ["@babel/env"],
     "plugins": ["@babel/plugin-proposal-class-properties"]
+}
 ```
 
 5. Finally, create your first test, for instance `hello_controller.test.js`:
 
 ```js
-import { Application } from 'stimulus';
+import { Application } from '@hotwired/stimulus';
 import { clearDOM, mountDOM } from '@symfony/stimulus-testing';
 import HelloController from '../controllers/hello_controller.js';
 
