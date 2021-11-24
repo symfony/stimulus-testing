@@ -9,9 +9,9 @@
 
 'use strict';
 
-import { Application, Controller } from 'stimulus';
+import { Application, Controller } from '@hotwired/stimulus';
 import { getByTestId, waitFor } from '@testing-library/dom';
-import { clearDOM, mountDOM } from '../dist/index';
+import { clearDOM, mountDOM } from '../src/index';
 
 // Controller used to check the actual controller was properly booted
 class AppController extends Controller {

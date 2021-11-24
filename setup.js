@@ -1,1 +1,1 @@
-require('./dist/setup.js');
+require('./src/setup.js');

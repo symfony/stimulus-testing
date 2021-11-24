@@ -2,18 +2,14 @@
     "name": "@symfony/stimulus-testing",
     "description": "@testing-library integration for Symfony UX",
     "version": "1.1.0",
-    "main": "dist/index.js",
+    "main": "src/index.js",
     "license": "MIT",
     "author": "Titouan Galopin <galopintitouan@gmail.com>",
     "engines": {
         "node": "^10.13.0 || >=12.0.0"
     },
     "scripts": {
-        "build": "babel src -d dist",
-        "test": "babel src -d dist && jest"
-    },
-    "peerDependencies": {
-        "stimulus": "^2.0"
+        "test": "jest"
     },
     "dependencies": {
         "@testing-library/dom": "^7.28.1",
@@ -25,11 +21,9 @@
         "regenerator-runtime": "^0.13.7"
     },
     "devDependencies": {
-        "@babel/cli": "^7.12.1",
         "@babel/core": "^7.12.3",
-        "@babel/plugin-proposal-class-properties": "^7.12.1",
         "@babel/preset-env": "^7.12.7",
-        "stimulus": "^2.0.0"
+        "@hotwired/stimulus": "^3.0.0"
     },
     "jest": {
         "testRegex": "test/.*\\.test.js",
@@ -39,7 +33,6 @@
     },
     "files": [
         "src/",
-        "dist/",
         "setup.js"
     ]
 }
