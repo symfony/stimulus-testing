@@ -9,7 +9,7 @@
 
 'use strict';
 
-const mountDOM = (htmlString = '') => {
+module.exports.mountDOM = (htmlString = '') => {
     const div = document.createElement('div');
     div.innerHTML = htmlString;
     document.body.appendChild(div);
@@ -17,8 +17,6 @@ const mountDOM = (htmlString = '') => {
     return div;
 };
 
-const clearDOM = () => {
+module.exports.clearDOM = () => {
     document.body.innerHTML = '';
 };
-
-export { clearDOM, mountDOM };
