@@ -28,7 +28,7 @@ To start using Symfony UX Testing, you first need to configure a testing environ
 2. Create a `assets/test/setup.js` file to initialize Symfony UX Testing:   
 
 ```js
-import '@symfony/ux-testing/setup';
+import '@symfony/stimulus-testing/setup';
 ```
 
 3. Create a `assets/jest.config.js` file for Jest configuration:
