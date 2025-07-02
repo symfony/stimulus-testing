@@ -1,5 +1,48 @@
 # Symfony UX Stimulus testing
 
+> [!WARNING]
+> **Deprecated**: This package is deprecated and will not receive any further updates.
+
+Because this package only provides very small helpers to help write tests for Stimulus controllers, and is tightly coupled with [Jest](https://jestjs.io/), [jsdom](https://github.com/jsdom/jsdom) and [Testing Library](https://testing-library.com/) dependencies, we can no longer recommend it.
+
+In 2025, we cannot force developers to install Jest (and [~270 sub-dependencies](https://npmgraph.js.org/?q=jest) including [Babel](https://babeljs.io/)) and the like, since [many test runners exist](https://npmtrends.com/ava-vs-japa-vs-jasmine-vs-jest-vs-karma-vs-mocha-vs-tap-vs-vitest), and many of them are more modern and much faster, like [Vitest](https://vitest.dev/).
+
+We want to give you the choice to use the best tools for your needs, and not force you to use what we suggested in the past.
+
+To migrate from `@symfony/stimulus-testing`, you can follow these steps:
+
+1. Install the dev dependencies `@testing-library/jest-dom @testing-library/dom`;
+    you may also want to install `mutationobserver-shim regenerator-runtime` if you still have 
+    legacy code or _architecture_.
+2. In the file `assets/test/setup.js`, replace imports:
+```diff
+-import '@symfony/stimulus-testing/setup';
++import '@testing-library/jest-dom';
+```
+3. Create the file `assets/test/stimulus-helpers.js` with the following content:
+```js
+export function mountDOM(html = '') {
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    document.body.appendChild(div);
+
+    return div;
+}
+
+export function clearDOM() {
+    document.body.innerHTML = '';
+}
+```
+4. In your tests files, replace imports for `mountDOM` and `clearDOM`:
+```diff
+// assets/test/controllers/hello_controller.test.js
+-import { clearDOM, mountDOM } from '@symfony/stimulus-testing';
++import { clearDOM, mountDOM } from '../stimulus-helpers';
+```
+5. And finally, remove the `@symfony/stimulus-testing` dependency from your project.
+
+---
+
 Symfony UX Stimulus testing is a low-level package to help write tests for Stimulus controllers
 in applications and reusable packages.
 
