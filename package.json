@@ -1,7 +1,7 @@
 {
     "name": "@symfony/stimulus-testing",
     "description": "@testing-library integration for Symfony UX",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "main": "src/index.js",
     "license": "MIT",
     "author": "Titouan Galopin <galopintitouan@gmail.com>",
